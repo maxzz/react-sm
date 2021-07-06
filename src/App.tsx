@@ -1,11 +1,14 @@
 import React, { ReactNode, useState } from 'react';
 import './App.css';
+import { LogoReact, LogoRedux } from './components/XtraLogos';
 
-function Section({ title, children }: { title: string; children: ReactNode; }) {
+function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     return (
         <section className="mb-4">
             <header className="px-4 py-3 text-2xl bg-blue-500 flex justify-between" style={{ boxShadow: '0px 2px 1px rgba(0,0,0, .2)' }}>
-                <div className="">Logo</div>
+                <div className="">
+                    {logo}
+                </div>
                 <div className="">{title}</div>
             </header>
             {children}
@@ -16,16 +19,16 @@ function Section({ title, children }: { title: string; children: ReactNode; }) {
 function App() {
     return (
         <div className="h-screen bg-blue-50 flex-col text-blue-200">
-            <Section title="Redux">
+            <Section title="Redux" logo={LogoReact()}>
 
             </Section>
-            <Section title="Context Provider/Consumer">
+            <Section title="Context Provider/Consumer"  logo={LogoRedux()}>
 
             </Section>
-            <Section title="Zustand">
+            <Section title="Zustand"  logo={LogoReact()}>
 
             </Section>
-            <Section title="Jotai / Recoil">
+            <Section title="Jotai / Recoil"  logo={LogoReact()}>
 
             </Section>
         </div>
