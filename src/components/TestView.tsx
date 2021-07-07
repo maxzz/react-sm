@@ -1,15 +1,9 @@
 import React from 'react';
-import { getNGonPath } from '../utils/numbers';
-
-type TestSectionProps = {
-    nPoints: number; // Outer points
-    oRadius: number; // Outer radius
-    iRadius: number; // Inner radius
-};
+import { getNGonPath, ShapeProps } from '../utils/numbers';
 
 const viewBoxSize = 300;
 
-function TestView(props: TestSectionProps) {
+function TestView(props: ShapeProps) {
     const { nPoints, oRadius, iRadius } = props;
     const path = React.useMemo(() => getNGonPath(props, viewBoxSize), [nPoints, oRadius, iRadius]);
     return (
@@ -19,16 +13,16 @@ function TestView(props: TestSectionProps) {
     );
 }
 
-function DeepTreeSimulation(props: TestSectionProps) {
+function DeepTreeSimulation(props: ShapeProps) {
     return (
         <TestView {...props} />
     );
 }
 
 function TestSection() {
+    const [nPoints, setNPoints] = React.useState(5);
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
-    const [nPoints, setNPoints] = React.useState(5);
 
     return (
         <div className="px-4 py-2 flex space-x-4">

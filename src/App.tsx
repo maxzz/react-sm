@@ -23,14 +23,14 @@ function App() {
             <Section title="Redux" logo={LogoRedux()}>
                 <TestSection />
             </Section>
-            <Section title="Context Provider/Consumer"  logo={LogoContext()}>
-
+            <Section title="Context Provider/Consumer" logo={LogoContext()}>
+                <TestSection />
             </Section>
-            <Section title="Zustand"  logo={LogoZustand()}>
-
+            <Section title="Zustand" logo={LogoZustand()}>
+                <TestSection />
             </Section>
-            <Section title="Jotai / Recoil"  logo={LogoJotai()}>
-
+            <Section title="Jotai / Recoil" logo={LogoJotai()}>
+                <TestSection />
             </Section>
         </div>
     );
