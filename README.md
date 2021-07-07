@@ -2,10 +2,13 @@
 
 React state managment flavours.
 
+1. React
 1. Context
 2. Redux
 3. Zustand
 4. Jotai
+
+<img src="src/assets/previews/2021-07-07_2-29-02.png" width="340px" />
 
 #### Links
 

@@ -5,7 +5,7 @@ import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './com
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     return (
-        <section className="mb-4">
+        <section className="">
             <header className="px-4 py-3 text-2xl bg-blue-500 flex justify-between" style={{ boxShadow: '0px 2px 1px rgba(0,0,0, .2)' }}>
                 <div className="">
                     {logo}
