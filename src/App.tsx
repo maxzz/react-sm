@@ -20,19 +20,19 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 function App() {
     return (
         <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
-            <Section title="React" logo={LogoReact()}>
+            <Section title="React" logo={<LogoReact />}>
                 <TestSection />
             </Section>
-            <Section title="Redux" logo={LogoRedux()}>
+            <Section title="Redux" logo={<LogoRedux />}>
                 <TestSection />
             </Section>
-            <Section title="Context Provider/Consumer" logo={LogoContext()}>
+            <Section title="Context Provider/Consumer" logo={<LogoContext />}>
                 <TestSection />
             </Section>
-            <Section title="Zustand" logo={LogoZustand()}>
+            <Section title="Zustand" logo={<LogoZustand />}>
                 <TestSection />
             </Section>
-            <Section title="Jotai / Recoil" logo={LogoJotai()}>
+            <Section title="Jotai / Recoil" logo={<LogoJotai />}>
                 <TestSection />
             </Section>
         </div>
