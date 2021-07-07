@@ -16,11 +16,19 @@ function generatePoints(numberOfPoints: number, outerRadius: number, innerRadius
     return points;
 }
 
-function TestView() {
+type TestViewProps = {
+    outerRadius?: number;
+    innerRadius?: number;
+    outerPoints?: number;
+};
+
+function TestView(props: TestViewProps) {
+    const {
+        outerRadius = 100,
+        innerRadius = 40,
+        outerPoints = 5
+    } = props;
     const viewBoxSize = 240;
-    const outerRadius = 100;
-    const innerRadius = 40;
-    const outerPoints = 5;
 
     const path = React.useMemo(() => {
         const points = generatePoints(outerPoints * 2, outerRadius, innerRadius, viewBoxSize);
@@ -30,7 +38,7 @@ function TestView() {
 
     return (
         <div>
-            <svg className="w-24 h-24 bg-red-100" viewBox="0 0 240 240">
+            <svg className="w-24 h-24 bg-red-100" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}>
                 <path stroke="black" strokeWidth="2" fill="none" d={path} />
             </svg>
         </div>
