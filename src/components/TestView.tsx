@@ -1,17 +1,15 @@
 import React from 'react';
 
-function generatePath(radius: number, numberOfPoints: number, size: number) {
+function generatePoints(numberOfPoints: number, outerRadius: number, innerRadius: number, viewBoxSize: number) {
+    const xPosition = viewBoxSize / 2;
+    const yPosition = viewBoxSize / 2;
     const angleStep = (Math.PI * 2) / numberOfPoints;
-    const xPosition = 120; //shape.clientWidth / 2
-    const yPosition = 120; //shape.clientHeight / 2
-
     const points = [];
 
     for (let i = 1; i <= numberOfPoints; i++) {
-        const radiusAtPoint = i % 2 === 0 ? radius : size;
+        const radiusAtPoint = i % 2 === 0 ? outerRadius : innerRadius;
         const x = xPosition + Math.cos(i * angleStep) * radiusAtPoint;
         const y = yPosition + Math.sin(i * angleStep) * radiusAtPoint;
-
         points.push({ x, y });
     }
 
@@ -20,19 +18,20 @@ function generatePath(radius: number, numberOfPoints: number, size: number) {
 
 function TestView() {
     const viewBoxSize = 240;
-    const size = 40;
-    const sides = 5;
-    const points = generatePath(100, sides * 2, size);
+    const outerRadius = 100;
+    const innerRadius = 40;
+    const outerPoints = 5;
 
-    const path = points.map(({ x, y }) => `L${x},${y}`).join(' ');
+    const path = React.useMemo(() => {
+        const points = generatePoints(outerPoints * 2, outerRadius, innerRadius, viewBoxSize);
+        const s = points.map(({ x, y }) => `L${x},${y}`).join(' ');
+        return `M${points[0].x},${points[0].y} ${s}z`;
+    }, [outerPoints, outerRadius, innerRadius, viewBoxSize]);
 
     return (
         <div>
             <svg className="w-24 h-24 bg-red-100" viewBox="0 0 240 240">
-                <path
-                    stroke="black" strokeWidth="2" fill="none"
-                    d={`M${points[0].x},${points[0].y} ${path}z`}
-                />
+                <path stroke="black" strokeWidth="2" fill="none" d={path} />
             </svg>
         </div>
     );
