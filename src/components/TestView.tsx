@@ -37,18 +37,34 @@ function TestView(props: TestViewProps) {
     }, [outerPoints, outerRadius, innerRadius, viewBoxSize]);
 
     return (
-        <div>
-            <svg className="w-24 h-24 bg-red-100" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}>
-                <path stroke="black" strokeWidth="2" fill="none" d={path} />
-            </svg>
-        </div>
+        <svg className="w-full h-full" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}>
+            <path stroke="currentColor" strokeWidth="2" fill="none" d={path} />
+        </svg>
     );
 }
 
 function TestSection() {
     return (
-        <TestView />
-    )
+        <div className="px-4 py-2 flex space-x-4">
+            <div className="w-32 h-32 text-blue-500 border-4 rounded-md border-yellow-600-100">
+                <TestView />
+            </div>
+            <div className="text-blue-900">
+                <div className="flex items-center">
+                    <div className="flex-1">Sides</div>
+                    <input className="mx-4" type="range" />
+                </div>
+                <div className="flex items-center">
+                    <div className="flex-1">Innser radius</div>
+                    <input className="mx-4" type="range" />
+                </div>
+                <div className="flex items-center">
+                    <div className="flex-1">Outer radius</div>
+                    <input className="mx-4" type="range" />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default TestSection;
