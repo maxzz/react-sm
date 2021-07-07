@@ -1,5 +1,5 @@
 import React from 'react';
-import { getNGonPath, ShapeProps } from '../utils/numbers';
+import { getNGonPath, ShapeProps } from '../../utils/numbers';
 
 const viewBoxSize = 300;
 

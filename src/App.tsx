@@ -1,6 +1,6 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 import './App.css';
-import TestSection from './components/TestView';
+import TestSection from './components/Show1React/TestView';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
@@ -19,7 +19,10 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
 function App() {
     return (
-        <div className="h-screen bg-blue-50 flex-col text-blue-200">
+        <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
+            <Section title="React" logo={LogoReact()}>
+                <TestSection />
+            </Section>
             <Section title="Redux" logo={LogoRedux()}>
                 <TestSection />
             </Section>
