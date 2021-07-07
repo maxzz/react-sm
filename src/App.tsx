@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import './App.css';
-import { LogoReact, LogoContext, LogoRedux } from './components/XtraLogos';
+import { LogoReact, LogoContext, LogoRedux, LogoZustand } from './components/XtraLogos';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     return (
@@ -25,7 +25,7 @@ function App() {
             <Section title="Context Provider/Consumer"  logo={LogoContext()}>
 
             </Section>
-            <Section title="Zustand"  logo={LogoReact()}>
+            <Section title="Zustand"  logo={LogoZustand()}>
 
             </Section>
             <Section title="Jotai / Recoil"  logo={LogoReact()}>
