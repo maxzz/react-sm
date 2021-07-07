@@ -28,6 +28,14 @@ export function LogoZustand() {
     );
 }
 
+export function LogoJotai() {
+    return (
+        <div className="w-10 h-8">
+            <svg viewBox='0 0 100 100'><text y='.9em' font-size='90'>👻</text></svg>
+        </div>
+    );
+}
+
 export function LogoContext() {
     return (
         <svg className="w-8 h-8" viewBox="0 0 32.5 32.5">

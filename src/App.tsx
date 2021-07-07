@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import './App.css';
-import { LogoReact, LogoContext, LogoRedux, LogoZustand } from './components/XtraLogos';
+import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     return (
@@ -28,7 +28,7 @@ function App() {
             <Section title="Zustand"  logo={LogoZustand()}>
 
             </Section>
-            <Section title="Jotai / Recoil"  logo={LogoReact()}>
+            <Section title="Jotai / Recoil"  logo={LogoJotai()}>
 
             </Section>
         </div>
