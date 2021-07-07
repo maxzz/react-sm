@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import './App.css';
-import TestView from './components/TestView';
+import TestSection from './components/TestView';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
@@ -21,7 +21,7 @@ function App() {
     return (
         <div className="h-screen bg-blue-50 flex-col text-blue-200">
             <Section title="Redux" logo={LogoRedux()}>
-                <TestView />
+                <TestSection />
             </Section>
             <Section title="Context Provider/Consumer"  logo={LogoContext()}>
 

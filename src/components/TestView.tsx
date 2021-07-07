@@ -45,4 +45,10 @@ function TestView(props: TestViewProps) {
     );
 }
 
-export default TestView;
+function TestSection() {
+    return (
+        <TestView />
+    )
+}
+
+export default TestSection;
