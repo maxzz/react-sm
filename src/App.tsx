@@ -30,7 +30,7 @@ function App() {
             <Section title="Context API" logo={<LogoContext />}>
                 <TestSectionContext />
             </Section>
-            <Section title="Redux" logo={<LogoRedux />}>
+            <Section title="Redux Toolkit" logo={<LogoRedux />}>
                 <TestSectionRedux />
             </Section>
             <Section title="Zustand" logo={<LogoZustand />}>

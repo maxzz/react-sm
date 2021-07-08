@@ -1,28 +1,27 @@
-import { createStore } from 'redux';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ShapeProps } from '../../utils/numbers';
 
-export enum ACTIONS {
-    nPoints = 'nPoints',
-    oRadius = 'oRadius',
-    iRadius = 'iRadius',
-}
-
-const initialState = {
-    nPoints: 4,
-    oRadius: 10,
-    iRadius: 150,
+const initialState: ShapeProps = {
+    nPoints: 12,
+    oRadius: 140,
+    iRadius: 12,
 };
 
-const reducer = (state = initialState, action: { type: ACTIONS; value: number; }) => {
-    switch (action.type) {
-        case ACTIONS.nPoints:
-            return { ...state, nPoints: action.value };
-        case ACTIONS.oRadius:
-            return { ...state, oRadius: action.value };
-        case ACTIONS.iRadius:
-            return { ...state, iRadius: action.value };
-        default:
-            return state;
+const shapePropsSlice = createSlice({
+    name: 'shapeProps',
+    initialState,
+    reducers: {
+        setNPoints(state, action: PayloadAction<number>) {
+            state.nPoints = action.payload;
+        },
+        setORadius(state, action: PayloadAction<number>) {
+            state.oRadius = action.payload;
+        },
+        setIRadius(state, action: PayloadAction<number>) {
+            state.iRadius = action.payload;
+        }
     }
-};
+});
 
-export const store = createStore(reducer);
+export const { setNPoints, setORadius, setIRadius } = shapePropsSlice.actions;
+export default shapePropsSlice.reducer;
