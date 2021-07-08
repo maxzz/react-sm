@@ -66,7 +66,83 @@ const ShapeContext = React.createContext({
 ShapeContext.displayName = 'NameIsShapeContext';
 
 function TestSection() {
-    const [nPoints, setNPoints] = React.useState(5); // TODO: We cam use useReducer hook
+    const [context, setContext] = React.useState({
+        ...defShape(),
+        setNPoints: setNPoints2,
+        setORadius: setORadius2,
+        setIRadius: setIRadius2,
+    });
+
+    function setNPoints2(v: number) {
+        setContext((prev) => ({
+            ...prev,
+            nPoints: v,
+        }))
+    }
+
+    function setORadius2(v: number) {
+        setContext((prev) => ({
+            ...prev,
+            oRadius: v,
+        }))
+    }
+
+    function setIRadius2(v: number) {
+        setContext((prev) => ({
+            ...prev,
+            iRadius: v,
+        }))
+    }
+
+    return (
+        <ShapeContext.Provider value={context}>
+            <DeepTreeSimulation />
+        </ShapeContext.Provider>
+    )
+}
+
+// It works OK without useReducer.
+/*
+function TestSection() {
+    const [context, setContext] = React.useState({
+        ...defShape(),
+        setNPoints: setNPoints2,
+        setORadius: setORadius2,
+        setIRadius: setIRadius2,
+    });
+
+    function setNPoints2(v: number) {
+        setContext((prev) => ({
+            ...prev,
+            nPoints: v,
+        }))
+    }
+
+    function setORadius2(v: number) {
+        setContext((prev) => ({
+            ...prev,
+            oRadius: v,
+        }))
+    }
+
+    function setIRadius2(v: number) {
+        setContext((prev) => ({
+            ...prev,
+            iRadius: v,
+        }))
+    }
+
+    return (
+        <ShapeContext.Provider value={context}>
+            <DeepTreeSimulation />
+        </ShapeContext.Provider>
+    )
+}
+*/
+// It works OK without useReducer.
+/*
+function TestSection() {
+    const [nPoints, setNPoints] = React.useState(5);
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
 
@@ -107,5 +183,5 @@ function TestSection() {
         </ShapeContext.Provider>
     )
 }
-
+*/
 export default TestSection;
