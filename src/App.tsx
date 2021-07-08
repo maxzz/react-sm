@@ -1,8 +1,11 @@
 import React, { ReactNode } from 'react';
 import './App.css';
-import TestSection from './components/Show1React/TestViewReact';
-import TestSection2 from './components/Show2Context/TestViewContext';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
+import TestSectionReact from './components/Show1React/TestSectionReact';
+import TestSectionContext from './components/Show2Context/TestSectionContext';
+import TestSectionRedux from './components/Show3Redux/TestSectionRedux';
+import TestSectionZustand from './components/Show4Zustand/TestSectionZustand';
+import TestSectionJotai from './components/Show5Jotai/TestSectionJotai';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     return (
@@ -22,19 +25,19 @@ function App() {
     return (
         <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
             <Section title="React" logo={<LogoReact />}>
-                <TestSection />
+                <TestSectionReact />
             </Section>
             <Section title="Context Provider/Consumer" logo={<LogoContext />}>
-                <TestSection2 />
+                <TestSectionContext />
             </Section>
             <Section title="Redux" logo={<LogoRedux />}>
-                <TestSection />
+                <TestSectionRedux />
             </Section>
             <Section title="Zustand" logo={<LogoZustand />}>
-                <div className="px-4 py-2 ">TODO</div>
+            <TestSectionZustand />
             </Section>
             <Section title="Jotai / Recoil" logo={<LogoJotai />}>
-                <TestSection />
+                <TestSectionJotai />
             </Section>
         </div>
     );
