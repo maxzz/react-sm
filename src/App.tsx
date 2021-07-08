@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import './App.css';
-import TestSection from './components/Show1React/TestView';
-import TestSection2 from './components/Show2Context/TestContextView';
+import TestSection from './components/Show1React/TestViewReact';
+import TestSection2 from './components/Show2Context/TestViewContext';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
@@ -31,7 +31,7 @@ function App() {
                 <TestSection />
             </Section>
             <Section title="Zustand" logo={<LogoZustand />}>
-                <TestSection />
+                <div className="px-4 py-2 ">TODO</div>
             </Section>
             <Section title="Jotai / Recoil" logo={<LogoJotai />}>
                 <TestSection />
