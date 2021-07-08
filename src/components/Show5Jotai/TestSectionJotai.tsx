@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShapeProps } from '../../utils/numbers';
 import TestView, { viewBoxSize } from '../TestView';
+import { atom, useAtom } from 'jotai';
 
 function DeepTreeSimulation(props: ShapeProps) {
     return (
@@ -8,10 +9,10 @@ function DeepTreeSimulation(props: ShapeProps) {
     );
 }
 
-function TestSection() {
-    const [nPoints, setNPoints] = React.useState(3); //12,150,74
-    const [oRadius, setORadius] = React.useState(100);
-    const [iRadius, setIRadius] = React.useState(40);
+function TestSectionView() {
+    const [nPoints, setNPoints] = useAtom(nPointsAtom);
+    const [oRadius, setORadius] = useAtom(oRadiusAtom);
+    const [iRadius, setIRadius] = useAtom(iRadiusAtom);
 
     return (
         <div className="px-4 py-2 flex space-x-4">
@@ -41,4 +42,14 @@ function TestSection() {
     );
 }
 
+function TestSection() {
+    return (
+        <TestSectionView />
+    )
+}
+
 export default TestSection;
+
+const nPointsAtom = atom(20);
+const oRadiusAtom = atom(150);
+const iRadiusAtom = atom(30);
