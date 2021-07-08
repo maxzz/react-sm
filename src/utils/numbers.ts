@@ -14,10 +14,14 @@ function generatePoints(numberOfPoints: number, outerRadius: number, innerRadius
     const angleStep = (Math.PI * 2) / numberOfPoints;
     const points = [];
 
-    for (let i = 1; i <= numberOfPoints; i++) {
+    const initialAngle = -Math.PI / 2; //-90 * Math.PI / 180
+
+    for (let i = 0; i < numberOfPoints; i++) {
+        console.log('a', i, i * angleStep);
+
         const radiusAtPoint = i % 2 === 0 ? outerRadius : innerRadius;
-        const x = xPosition + Math.cos(i * angleStep) * radiusAtPoint;
-        const y = yPosition + Math.sin(i * angleStep) * radiusAtPoint;
+        const x = xPosition + Math.cos(i * angleStep + initialAngle) * radiusAtPoint;
+        const y = yPosition + Math.sin(i * angleStep + initialAngle) * radiusAtPoint;
         points.push({ x, y });
     }
 
