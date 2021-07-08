@@ -73,12 +73,11 @@ const ShapeContext = React.createContext<ShapeContextType>({
 ShapeContext.displayName = 'NameIsShapeContext';
 
 function TestSection() {
-
     const initialState: ShapeContextType = {
         ...defShape(),
-        setNPoints: setNPoints2,
-        setORadius: setORadius2,
-        setIRadius: setIRadius2,
+        setNPoints: (v: number) => dispatch({type: 'nPoints', value: v}),
+        setORadius: (v: number) => dispatch({type: 'oRadius', value: v}),
+        setIRadius: (v: number) => dispatch({type: 'iRadius', value: v}),
     };
 
     function reducer(state: ShapeContextType, action: { type: string; value: number; }) {
@@ -96,18 +95,6 @@ function TestSection() {
 
     const [context, dispatch] = React.useReducer(reducer, initialState);
 
-    function setNPoints2(v: number) {
-        dispatch({type: 'nPoints', value: v});
-    }
-
-    function setORadius2(v: number) {
-        dispatch({type: 'oRadius', value: v});
-    }
-
-    function setIRadius2(v: number) {
-        dispatch({type: 'iRadius', value: v});
-    }
-
     return (
         <ShapeContext.Provider value={context}>
             <DeepTreeSimulation />
@@ -116,34 +103,25 @@ function TestSection() {
 }
 
 // It works OK without useReducer.
-/*
+/** /
 function TestSection() {
     const [context, setContext] = React.useState({
         ...defShape(),
-        setNPoints: setNPoints2,
-        setORadius: setORadius2,
-        setIRadius: setIRadius2,
+        setNPoints,
+        setORadius,
+        setIRadius,
     });
 
-    function setNPoints2(v: number) {
-        setContext((prev) => ({
-            ...prev,
-            nPoints: v,
-        }))
+    function setNPoints(v: number) {
+        setContext((prev) => ({ ...prev, nPoints: v, }))
     }
 
-    function setORadius2(v: number) {
-        setContext((prev) => ({
-            ...prev,
-            oRadius: v,
-        }))
+    function setORadius(v: number) {
+        setContext((prev) => ({ ...prev, oRadius: v, }))
     }
 
-    function setIRadius2(v: number) {
-        setContext((prev) => ({
-            ...prev,
-            iRadius: v,
-        }))
+    function setIRadius(v: number) {
+        setContext((prev) => ({ ...prev, iRadius: v, }))
     }
 
     return (
@@ -152,6 +130,6 @@ function TestSection() {
         </ShapeContext.Provider>
     )
 }
-*/
+/**/
 
 export default TestSection;
