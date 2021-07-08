@@ -27,7 +27,7 @@ function TestSection() {
     return (
         <div className="px-4 py-2 flex space-x-4">
             {/* View */}
-            <div className="w-32 h-32 text-blue-500 border-4 rounded-md border-yellow-600-100">
+            <div className="w-32 h-32 text-blue-500 border-4 rounded-md border-blue-100 bg-gray-50">
                 <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
             </div>
             {/* Controls */}

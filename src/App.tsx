@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import './App.css';
 import TestSection from './components/Show1React/TestView';
+import TestSection2 from './components/Show2Context/TestContextView';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
@@ -23,10 +24,10 @@ function App() {
             <Section title="React" logo={<LogoReact />}>
                 <TestSection />
             </Section>
-            <Section title="Redux" logo={<LogoRedux />}>
-                <TestSection />
-            </Section>
             <Section title="Context Provider/Consumer" logo={<LogoContext />}>
+                <TestSection2 />
+            </Section>
+            <Section title="Redux" logo={<LogoRedux />}>
                 <TestSection />
             </Section>
             <Section title="Zustand" logo={<LogoZustand />}>
