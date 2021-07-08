@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { ShapeProps } from '../../utils/numbers';
 import TestView, { viewBoxSize } from '../TestView';
 
@@ -12,6 +13,8 @@ function TestContextView() {
     const [nPoints, setNPoints] = React.useState(3); //12,150,74
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
+
+    //const name = useSelector(state => state.nPoints);
 
     return (
         <div className="px-4 py-2 flex space-x-4">
@@ -44,7 +47,7 @@ function TestContextView() {
 function TestSection() {
     return (
         <TestContextView />
-    )
+    );
 }
 
 export default TestSection;
