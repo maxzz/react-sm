@@ -27,7 +27,7 @@ function App() {
             <Section title="React" logo={<LogoReact />}>
                 <TestSectionReact />
             </Section>
-            <Section title="Context Provider/Consumer" logo={<LogoContext />}>
+            <Section title="Context API" logo={<LogoContext />}>
                 <TestSectionContext />
             </Section>
             <Section title="Redux" logo={<LogoRedux />}>

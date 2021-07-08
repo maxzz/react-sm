@@ -13,9 +13,15 @@ function TestView(props: ShapeProps) {
     );
 }
 
-function DeepTreeSimulation(props: ShapeProps) {
+function DeepTreeSimulation0(props: ShapeProps) {
     return (
         <TestView {...props} />
+    );
+}
+
+function DeepTreeSimulation(props: ShapeProps) {
+    return (
+        <DeepTreeSimulation0 {...props} />
     );
 }
 
