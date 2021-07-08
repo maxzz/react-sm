@@ -8,7 +8,7 @@ function DeepTreeSimulation(props: ShapeProps) {
     );
 }
 
-function TestSection() {
+function TestContextView() {
     const [nPoints, setNPoints] = React.useState(3); //12,150,74
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
@@ -39,6 +39,12 @@ function TestSection() {
             </div>
         </div>
     );
+}
+
+function TestSection() {
+    return (
+        <TestContextView />
+    )
 }
 
 export default TestSection;
