@@ -40,7 +40,7 @@ function TestContextView() {
                     <div className="w-16">{nPoints}</div>
                 </div>
                 <div className="flex items-center">
-                    <div className="flex-1">Innser radius</div>
+                    <div className="flex-1">Inner radius</div>
                     <input className="mx-4" type="range" min={1} max={viewBoxSize / 2} value={iRadius} onChange={(event) => _setIRadius(+event.target.value)} />
                     <div className="w-16">{iRadius}</div>
                 </div>
