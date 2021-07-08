@@ -62,11 +62,6 @@ function defShape() {
         iRadius: 40,
     };
 }
-// const DEF_SHAPEPROPS = {
-//     nPoint: 5,
-//     oRadius: 100,
-//     iRadius: 40,
-// };
 
 const ShapeContext = React.createContext({
     ...defShape(),
@@ -81,12 +76,36 @@ function TestSection() {
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
 
-    const context = {
+    const [context, setContext] = React.useState({
         ...defShape(),
-        setNPoints: setNPoints,
-        setORadius: setORadius,
-        setIRadius: setIRadius,
-    };
+        setNPoints: setNPoints2,
+        setORadius: setORadius2,
+        setIRadius: setIRadius2,
+    });
+
+    function setNPoints2(v: number) {
+        setNPoints(v);
+        setContext((prev) => ({
+            ...prev,
+            nPoints: v,
+        }))
+    }
+
+    function setORadius2(v: number) {
+        setORadius(v);
+        setContext((prev) => ({
+            ...prev,
+            oRadius: v,
+        }))
+    }
+
+    function setIRadius2(v: number) {
+        setIRadius(v);
+        setContext((prev) => ({
+            ...prev,
+            iRadius: v,
+        }))
+    }
 
     return (
         <ShapeContext.Provider value={context}>
