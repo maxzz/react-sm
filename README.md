@@ -4,7 +4,7 @@ React state managment flavours.
 
 1. React
 1. Context
-2. Redux
+2. Moder Redux with @reactjs/toolkit
 3. Zustand
 4. Jotai
 
