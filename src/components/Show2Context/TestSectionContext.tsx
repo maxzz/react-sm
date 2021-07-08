@@ -1,8 +1,9 @@
 import React from 'react';
+import { ShapeProps } from '../../utils/numbers';
 import TestView, { viewBoxSize } from '../TestView';
 
 function TestContextView() {
-    const {nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius,} = React.useContext(ShapeContext);
+    const { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, } = React.useContext(ShapeContext);
     return (
         <div className="px-4 py-2 flex space-x-4">
             {/* View */}
@@ -57,48 +58,61 @@ function defShape() {
     };
 }
 
-const ShapeContext = React.createContext({
+type ShapeContextType = ShapeProps & {
+    setNPoints: (value: number) => void;
+    setORadius: (value: number) => void;
+    setIRadius: (value: number) => void;
+};
+
+const ShapeContext = React.createContext<ShapeContextType>({
     ...defShape(),
-    setNPoints: (value: number) => {},
-    setORadius: (value: number) => {},
-    setIRadius: (value: number) => {},
+    setNPoints: (value: number) => { },
+    setORadius: (value: number) => { },
+    setIRadius: (value: number) => { },
 });
 ShapeContext.displayName = 'NameIsShapeContext';
 
 function TestSection() {
-    const [context, setContext] = React.useState({
+
+    const initialState: ShapeContextType = {
         ...defShape(),
         setNPoints: setNPoints2,
         setORadius: setORadius2,
         setIRadius: setIRadius2,
-    });
+    };
+
+    function reducer(state: ShapeContextType, action: { type: string; value: number; }) {
+        switch (action.type) {
+            case 'nPoints':
+                return { ...state, nPoints: action.value };
+            case 'oRadius':
+                return { ...state, oRadius: action.value };
+            case 'iRadius':
+                return { ...state, iRadius: action.value };
+            default:
+                throw new Error('oo');
+        }
+    }
+
+    const [context, dispatch] = React.useReducer(reducer, initialState);
 
     function setNPoints2(v: number) {
-        setContext((prev) => ({
-            ...prev,
-            nPoints: v,
-        }))
+        dispatch({type: 'nPoints', value: v});
     }
 
     function setORadius2(v: number) {
-        setContext((prev) => ({
-            ...prev,
-            oRadius: v,
-        }))
+        dispatch({type: 'oRadius', value: v});
     }
 
     function setIRadius2(v: number) {
-        setContext((prev) => ({
-            ...prev,
-            iRadius: v,
-        }))
+        dispatch({type: 'iRadius', value: v});
     }
 
     return (
         <ShapeContext.Provider value={context}>
             <DeepTreeSimulation />
         </ShapeContext.Provider>
-    )
+    );
 }
 
 // It works OK without useReducer.
@@ -139,49 +153,5 @@ function TestSection() {
     )
 }
 */
-// It works OK without useReducer.
-/*
-function TestSection() {
-    const [nPoints, setNPoints] = React.useState(5);
-    const [oRadius, setORadius] = React.useState(100);
-    const [iRadius, setIRadius] = React.useState(40);
 
-    const [context, setContext] = React.useState({
-        ...defShape(),
-        setNPoints: setNPoints2,
-        setORadius: setORadius2,
-        setIRadius: setIRadius2,
-    });
-
-    function setNPoints2(v: number) {
-        setNPoints(v);
-        setContext((prev) => ({
-            ...prev,
-            nPoints: v,
-        }))
-    }
-
-    function setORadius2(v: number) {
-        setORadius(v);
-        setContext((prev) => ({
-            ...prev,
-            oRadius: v,
-        }))
-    }
-
-    function setIRadius2(v: number) {
-        setIRadius(v);
-        setContext((prev) => ({
-            ...prev,
-            iRadius: v,
-        }))
-    }
-
-    return (
-        <ShapeContext.Provider value={context}>
-            <DeepTreeSimulation />
-        </ShapeContext.Provider>
-    )
-}
-*/
 export default TestSection;
