@@ -20,7 +20,7 @@ function DeepTreeSimulation(props: ShapeProps) {
 }
 
 function TestSection() {
-    const [nPoints, setNPoints] = React.useState(3);
+    const [nPoints, setNPoints] = React.useState(3); //12,150,74
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
 

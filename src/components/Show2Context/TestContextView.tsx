@@ -13,25 +13,13 @@ function TestView(props: ShapeProps) {
     );
 }
 
-function DeepTreeSimulation(props: ShapeProps) {
-    return (
-        <TestView {...props} />
-    );
-}
-
 function TestContextView() {
     const {nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius,} = React.useContext(ShapeContext);
-
-
-    // const [nPoints, setNPoints] = React.useState(5);
-    // const [oRadius, setORadius] = React.useState(100);
-    // const [iRadius, setIRadius] = React.useState(40);
-
     return (
         <div className="px-4 py-2 flex space-x-4">
             {/* View */}
             <div className="w-32 h-32 text-blue-500 border-4 rounded-md border-blue-100 bg-gray-50">
-                <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+                <TestView oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
             </div>
             {/* Controls */}
             <div className="text-blue-900">
@@ -55,11 +43,29 @@ function TestContextView() {
     );
 }
 
+function DeepTree0() {
+    return (
+        <TestContextView />
+    );
+}
+
+function DeepTree1() {
+    return (
+        <DeepTree0 />
+    );
+}
+
+function DeepTreeSimulation() {
+    return (
+        <DeepTree1 />
+    );
+}
+
 function defShape() {
     return {
-        nPoints: 5,
-        oRadius: 100,
-        iRadius: 40,
+        nPoints: 4,
+        oRadius: 10,
+        iRadius: 150,
     };
 }
 
@@ -72,7 +78,7 @@ const ShapeContext = React.createContext({
 ShapeContext.displayName = 'NameIsShapeContext';
 
 function TestSection() {
-    const [nPoints, setNPoints] = React.useState(5);
+    const [nPoints, setNPoints] = React.useState(5); // TODO: We cam use useReducer hook
     const [oRadius, setORadius] = React.useState(100);
     const [iRadius, setIRadius] = React.useState(40);
 
@@ -109,7 +115,7 @@ function TestSection() {
 
     return (
         <ShapeContext.Provider value={context}>
-            <TestContextView />
+            <DeepTreeSimulation />
         </ShapeContext.Provider>
     )
 }
