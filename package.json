@@ -9,9 +9,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "redux": "^4.1.0"
+    "react-redux": "^7.2.4"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
