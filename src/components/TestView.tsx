@@ -9,6 +9,7 @@ function TestView(props: ShapeProps) {
     return (
         <svg className="w-full h-full" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}>
             <path stroke="currentColor" strokeWidth="2" fill="none" d={path} />
+            <circle stroke="#00ff0080" strokeWidth="1" fill="none" r={oRadius} cx={viewBoxSize / 2} cy={viewBoxSize / 2} />
         </svg>
     );
 }
