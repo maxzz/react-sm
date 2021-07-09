@@ -41,8 +41,8 @@ function TestControls(props: TestControlsProps) {
                     <div className="w-16">{oRadius}</div>
                 </div>
             </div>
-            <div className="flex items-center text-blue-500">
-                <a className="text-sm pb-1 mr-1"  href={href}>source:</a>
+            <div className="flex items-center text-blue-400">
+                <a className="text-sm pb-1 mr-1"  href={href} target="_blank">source:</a>
                 <GithubLogoInline href={href} />
             </div>
         </div>
