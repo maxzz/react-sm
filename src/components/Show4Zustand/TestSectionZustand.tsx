@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShapeProps } from '../../utils/numbers';
-import TestView, { viewBoxSize } from '../TestView';
+import TestView from '../TestView';
 import create from 'zustand';
 import shallow from 'zustand/shallow';
 import TestControls from '../TestControls';
