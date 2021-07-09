@@ -24,9 +24,12 @@ function TestSectionView() {
     let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
 
     return (
-        <TestControls {...props} body={
-            <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
-        } />
+        <TestControls {...props}
+            href="https://github.com/maxzz/react-sm/blob/master/src/components/Show4Zustand/TestSectionZustand.tsx"
+            body={
+                <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+            }
+        />
     );
 }
 

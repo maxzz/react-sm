@@ -7,9 +7,12 @@ function TestContextView() {
     const { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, } = React.useContext(ShapeContext);
     let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
     return (
-        <TestControls {...props} body={
-            <TestView oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
-        } />
+        <TestControls {...props}
+            href="https://github.com/maxzz/react-sm/blob/master/src/components/Show2Context/TestSectionContext.tsx"
+            body={
+                <TestView oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+            }
+        />
     );
 }
 

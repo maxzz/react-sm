@@ -29,9 +29,12 @@ function TestContextView() {
     let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
 
     return (
-        <TestControls {...props} body={
-            <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
-        } />
+        <TestControls {...props}
+            href="https://github.com/maxzz/react-sm/blob/master/src/components/Show3Redux/TestSectionRedux.tsx"
+            body={
+                <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+            }
+        />
     );
 }
 
@@ -42,7 +45,7 @@ function DeepTreeSimulation2() {
 }
 
 function TestSection() {
-    
+
     return (
         <Provider store={store}>
             <DeepTreeSimulation2 />

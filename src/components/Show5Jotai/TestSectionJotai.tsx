@@ -18,16 +18,19 @@ function TestSectionView() {
     let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
 
     return (
-        <TestControls {...props} body={
-            <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
-        } />
+        <TestControls {...props}
+            href="https://github.com/maxzz/react-sm/blob/master/src/components/Show5Jotai/TestSectionJotai.tsx"
+            body={
+                <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+            }
+        />
     );
 }
 
 function TestSection() {
     return (
         <TestSectionView />
-    )
+    );
 }
 
 export default TestSection;
