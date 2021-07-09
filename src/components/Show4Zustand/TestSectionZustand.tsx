@@ -69,9 +69,9 @@ type Store = {
 };
 
 const useStore = create<Store>((set) => ({
-    nPoints: 20,
-    oRadius: 150,
-    iRadius: 30,
+    nPoints: 30,
+    oRadius: 40,
+    iRadius: 12,
     setNPoints: (v: number) => set({ nPoints: v }),
     setORadius: (v: number) => set({ oRadius: v }),
     setIRadius: (v: number) => set({ iRadius: v }),

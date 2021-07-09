@@ -24,6 +24,10 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 function App() {
     return (
         <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
+            <div className="pb-1 text-xs text-blue-900">
+                managing application state with:
+            </div>
+
             <Section title="React" logo={<LogoReact />}>
                 <TestSectionReact />
             </Section>
