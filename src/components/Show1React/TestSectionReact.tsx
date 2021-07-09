@@ -21,7 +21,9 @@ function TestSection() {
     let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
 
     return (
-        <TestControls {...props} body={<DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />} />
+        <TestControls {...props} body={
+            <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+        } />
     );
 }
 

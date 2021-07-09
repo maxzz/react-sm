@@ -7,7 +7,9 @@ function TestContextView() {
     const { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, } = React.useContext(ShapeContext);
     let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
     return (
-        <TestControls {...props} body={<TestView oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />} />
+        <TestControls {...props} body={
+            <TestView oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+        } />
     );
 }
 
@@ -54,9 +56,9 @@ ShapeContext.displayName = 'NameIsShapeContext';
 function TestSection() {
     const initialState: ShapeContextType = {
         ...defShape(),
-        setNPoints: (v: number) => dispatch({type: 'nPoints', value: v}),
-        setORadius: (v: number) => dispatch({type: 'oRadius', value: v}),
-        setIRadius: (v: number) => dispatch({type: 'iRadius', value: v}),
+        setNPoints: (v: number) => dispatch({ type: 'nPoints', value: v }),
+        setORadius: (v: number) => dispatch({ type: 'oRadius', value: v }),
+        setIRadius: (v: number) => dispatch({ type: 'iRadius', value: v }),
     };
 
     function reducer(state: ShapeContextType, action: { type: string; value: number; }) {
