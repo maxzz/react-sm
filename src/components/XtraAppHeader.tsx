@@ -8,7 +8,7 @@ function GitHubSvg() {
     );
 }
 
-function GithubLogoInline({ href }: { href: string; }) {
+export function GithubLogoInline({ href }: { href: string; }) {
     return (
         <div className="">
             <a
@@ -27,7 +27,7 @@ function GithubLogoInline({ href }: { href: string; }) {
 function XtraAppHeader() {
     return (
         <div className="py-1 text-blue-900 flex items-center">
-            <GithubLogoInline href="https://maxzz.github.io/react-sm" />
+            <GithubLogoInline href="https://github.com/maxzz/react-sm" />
 
             <div className="ml-1 pb-0.5 text-xs">
                 managing application state with:
