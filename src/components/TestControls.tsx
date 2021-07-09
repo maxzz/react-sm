@@ -1,6 +1,5 @@
 import React from 'react';
-import { ShapeProps } from '../utils/numbers';
-import TestView, { viewBoxSize } from './TestView';
+import { viewBoxSize } from './TestView';
 
 export type TestControlsProps = {
     nPoints: number;

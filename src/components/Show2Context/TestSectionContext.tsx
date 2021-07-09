@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShapeProps } from '../../utils/numbers';
+import TestControls from '../TestControls';
 import TestView, { viewBoxSize } from '../TestView';
 
 function TestContextView() {
@@ -33,8 +34,10 @@ function TestContextView() {
 }
 
 function DeepTree0() {
+    const { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, } = React.useContext(ShapeContext);
+    let props = { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, };
     return (
-        <TestContextView />
+        <TestControls {...props} body={<TestView oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />} />
     );
 }
 
