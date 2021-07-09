@@ -59,7 +59,16 @@ function TestSection() {
 
 export default TestSection;
 
-const useStore = create((set) => ({
+type Store = {
+    nPoints: number;
+    oRadius: number;
+    iRadius: number;
+    setNPoints: (v: number) => any;
+    setORadius: (v: number) => any;
+    setIRadius: (v: number) => any;
+};
+
+const useStore = create<Store>((set) => ({
     nPoints: 20,
     oRadius: 150,
     iRadius: 30,
