@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import './App.css';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
+import XtraAppHeader from './components/XtraAppHeader';
 import TestSectionReact from './components/Show1React/TestSectionReact';
 import TestSectionContext from './components/Show2Context/TestSectionContext';
 import TestSectionRedux from './components/Show3Redux/TestSectionRedux';
@@ -24,10 +25,8 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 function App() {
     return (
         <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
-            <div className="pb-1 text-xs text-blue-900">
-                managing application state with:
-            </div>
-
+            <XtraAppHeader />
+            
             <Section title="React" logo={<LogoReact />}>
                 <TestSectionReact />
             </Section>
