@@ -9,25 +9,17 @@ export type TestControlsProps = {
     setNPoints: (v: number) => void;
     setORadius: (v: number) => void;
     setIRadius: (v: number) => void;
+
+    body: React.ReactNode
 };
 
-function DeepTreeSimulation0(props: ShapeProps) {
-    return <TestView {...props} />;
-}
-
-function DeepTreeSimulation(props: ShapeProps) {
-    return (
-        <DeepTreeSimulation0 {...props} />
-    );
-}
-
 function TestControls(props: TestControlsProps) {
-    const { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, } = props;
+    const { nPoints, setNPoints, oRadius, setORadius, iRadius, setIRadius, body } = props;
 
     return (<div className="px-4 py-2 flex space-x-4">
         {/* View */}
         <div className="w-32 h-32 text-blue-500 border-4 rounded-md border-blue-100 bg-gray-50">
-            <DeepTreeSimulation oRadius={oRadius} iRadius={iRadius} nPoints={nPoints} />
+            {body}
         </div>
         {/* Controls */}
         <div className="text-blue-900">
