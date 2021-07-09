@@ -15,7 +15,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
                 <div className="">
                     {logo}
                 </div>
-                <div className="">{title}</div>
+                <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
             </header>
             {children}
         </section>
