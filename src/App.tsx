@@ -59,14 +59,14 @@ function SideBar() {
 
 function App() {
     return (
-        // <div className="relative bg-blue-300" style={{
-        //     backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
-        //     //, linear-gradient(to right bottom, #2e08fc, #f18210)
-        //     //backgroundColor: '#1f5188',
-        //     //mixBlendMode: 'lighten' //<- to make it work the parent should have background-color
-        // }}
-        // >
-        <div>
+        <div className="relative bg-blue-300" style={{
+            backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
+            //, linear-gradient(to right bottom, #2e08fc, #f18210)
+            //backgroundColor: '#1f5188',
+            //mixBlendMode: 'lighten' //<- to make it work the parent should have background-color
+        }}
+        >
+        {/* <div> */}
             <SideBar />
             <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
                 <XtraAppHeader />
