@@ -8,19 +8,19 @@ import TestSectionRedux from './components/Show3Redux/TestSectionRedux';
 import TestSectionZustand from './components/Show4Zustand/TestSectionZustand';
 import TestSectionJotai from './components/Show5Jotai/TestSectionJotai';
 import { useTimeout } from 'beautiful-react-hooks';
-//import noiseBkg from './assets/noise-gen.png';
+import noiseBkg from './assets/noise-gen.png';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     const logoRef = React.useRef<HTMLDivElement>(null);
 
     useTimeout(() => {
         logoRef.current && (logoRef.current.style.transform = 'scale(1)');
-    }, Math.round((Math.random() + 1) * 1000));
+    }, Math.round((Math.random() + 2) * 1000));
 
     return (
         <section className="">
             <header className="px-4 py-3 text-2xl bg-blue-500 flex justify-between" style={{ boxShadow: '0px 2px 1px rgba(0,0,0, .2)' }}>
-                <div ref={logoRef} className="" style={{transform: 'scale(1.5)'}}>
+                <div ref={logoRef} className="" style={{ transform: 'scale(1.5)' }}>
                     {logo}
                 </div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
@@ -32,7 +32,18 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
 function App() {
     return (
-        <div className="relative bg-blue-300"> {/* style={{backgroundImage: `url(${noiseBkg})`, mixBlendMode: 'lighten'}} */}
+        <div className="relative bg-blue-300" style={{
+            backgroundImage: `url(${noiseBkg})`,
+            backgroundColor: '#1f5188',
+            mixBlendMode: 'lighten'
+        }}
+        >
+        {/*
+        <div className="relative bg-blue-300" style={{
+            backgroundImage: `url(${noiseBkg})`,
+            mixBlendMode: 'lighten'
+        }}
+        > */}
             <div
                 className="absolute left-0 top-0 h-full
                     py-[2vw] px-[1vw] hidden sm:flex justify-end 
