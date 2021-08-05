@@ -27,17 +27,20 @@ function App() {
         <div className="relative bg-blue-300">
             <div
                 className="absolute left-0 top-0 h-full
-                    py-[2vw] px-[1vw] text-[3vw] flex justify-end 
-                    font-sans uppercase font-black text-[#d9edff] bg-blue-200"
+                    py-[2vw] px-[1vw] flex justify-end 
+                    font-sans uppercase font-black text-[#9ccbff] bg-blue-200"
                 // pl-[1vw]
                 style={{
                     writingMode: 'vertical-rl',
                     transform: 'rotate(180deg)',
-                    textShadow: 'rgb(255 255 255 / 70%) 1px 1px 2px, rgb(59 130 246 / 52%) 0px 0px 0.1em, rgb(115 168 255 / 49%) 0px 0px 0.1em'
+                    textShadow: 'rgb(255 255 255 / 70%) 1px 1px 2px, rgb(59 130 246 / 52%) 0px 0px 0.1em, rgb(115 168 255 / 49%) 0px 0px 0.1em',
+                    backgroundColor: '#98c9ff',
+                    boxShadow: '5px -9px 2px 5px #779cc485',
+                    fontSize: 'calc(24px + 6 * ((100vw - 320px) / 680))',
                 }}
             >
                 <div className="">React State Management</div>
-                <div className="text-sm py-2">2021</div>
+                <div className="py-2" style={{fontSize: 'calc(12px + 6 * ((100vw - 320px) / 680))'}}>2021</div>
             </div>
 
             <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
