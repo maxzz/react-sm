@@ -7,13 +7,20 @@ import TestSectionContext from './components/Show2Context/TestSectionContext';
 import TestSectionRedux from './components/Show3Redux/TestSectionRedux';
 import TestSectionZustand from './components/Show4Zustand/TestSectionZustand';
 import TestSectionJotai from './components/Show5Jotai/TestSectionJotai';
+import { useTimeout } from 'beautiful-react-hooks';
 //import noiseBkg from './assets/noise-gen.png';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
+    const logoRef = React.useRef<HTMLDivElement>(null);
+
+    useTimeout(() => {
+        logoRef.current && (logoRef.current.style.transform = 'scale(.5)');
+    }, 2000);
+
     return (
         <section className="">
             <header className="px-4 py-3 text-2xl bg-blue-500 flex justify-between" style={{ boxShadow: '0px 2px 1px rgba(0,0,0, .2)' }}>
-                <div className="">
+                <div ref={logoRef} className="">
                     {logo}
                 </div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
@@ -41,7 +48,7 @@ function App() {
                 }}
             >
                 <div className="">React State Management</div>
-                <div className="py-2" style={{fontSize: 'calc(12px + 6 * ((100vw - 320px) / 680))'}}>2021</div>
+                <div className="py-2" style={{ fontSize: 'calc(12px + 6 * ((100vw - 320px) / 680))' }}>2021</div>
             </div>
 
             <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
