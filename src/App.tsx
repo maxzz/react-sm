@@ -7,7 +7,7 @@ import TestSectionContext from './components/Show2Context/TestSectionContext';
 import TestSectionRedux from './components/Show3Redux/TestSectionRedux';
 import TestSectionZustand from './components/Show4Zustand/TestSectionZustand';
 import TestSectionJotai from './components/Show5Jotai/TestSectionJotai';
-import noiseBkg from './assets/noise-gen.png';
+//import noiseBkg from './assets/noise-gen.png';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
     return (
@@ -25,7 +25,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
 function App() {
     return (
-        <div className="relative bg-blue-300" style={{backgroundImage: `url(${noiseBkg})`, mixBlendMode: 'lighten'}}>
+        <div className="relative bg-blue-300"> {/* style={{backgroundImage: `url(${noiseBkg})`, mixBlendMode: 'lighten'}} */}
             <div
                 className="absolute left-0 top-0 h-full
                     py-[2vw] px-[1vw] hidden sm:flex justify-end 
