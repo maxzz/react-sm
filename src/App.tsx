@@ -27,7 +27,7 @@ function App() {
         <div className="relative bg-blue-300">
             <div
                 className="absolute left-0 top-0 h-full
-                    py-[2vw] px-[1vw] flex justify-end 
+                    py-[2vw] px-[1vw] hidden sm:flex justify-end 
                     font-sans uppercase font-black text-[#9ccbff] bg-blue-200"
                 // pl-[1vw]
                 style={{
