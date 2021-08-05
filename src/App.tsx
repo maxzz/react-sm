@@ -24,15 +24,25 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
 function App() {
     return (
-        <div className="relative">
-            <div 
-                className="absolute left-0 top-0 h-full py-2 pl-1 flex justify-end text-4xl font-mono font-black bg-blue-200 text-white"
-                style={{writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}
-            >React State Management</div>
+        <div className="relative bg-blue-300">
+            <div
+                className="absolute left-0 top-0 h-full
+                    py-[2vw] px-[1vw] text-[3vw] flex justify-end 
+                    font-sans uppercase font-black text-[#d9edff] bg-blue-200"
+                // pl-[1vw]
+                style={{
+                    writingMode: 'vertical-rl',
+                    transform: 'rotate(180deg)',
+                    textShadow: 'rgb(255 255 255 / 70%) 1px 1px 2px, rgb(59 130 246 / 52%) 0px 0px 0.1em, rgb(115 168 255 / 49%) 0px 0px 0.1em'
+                }}
+            >
+                <div className="">React State Management</div>
+                <div className="text-sm py-2">2021</div>
+            </div>
 
             <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
                 <XtraAppHeader />
-            
+
                 <Section title="React" logo={<LogoReact />}>
                     <TestSectionReact />
                 </Section>
@@ -43,7 +53,7 @@ function App() {
                     <TestSectionRedux />
                 </Section>
                 <Section title="Zustand" logo={<LogoZustand />}>
-                <TestSectionZustand />
+                    <TestSectionZustand />
                 </Section>
                 <Section title="Jotai / Recoil" logo={<LogoJotai />}>
                     <TestSectionJotai />
