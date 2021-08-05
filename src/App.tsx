@@ -14,13 +14,13 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
     const logoRef = React.useRef<HTMLDivElement>(null);
 
     useTimeout(() => {
-        logoRef.current && (logoRef.current.style.transform = 'scale(.5)');
-    }, 2000);
+        logoRef.current && (logoRef.current.style.transform = 'scale(1)');
+    }, Math.round((Math.random() + 1) * 1000));
 
     return (
         <section className="">
             <header className="px-4 py-3 text-2xl bg-blue-500 flex justify-between" style={{ boxShadow: '0px 2px 1px rgba(0,0,0, .2)' }}>
-                <div ref={logoRef} className="">
+                <div ref={logoRef} className="" style={{transform: 'scale(1.5)'}}>
                     {logo}
                 </div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
