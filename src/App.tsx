@@ -19,7 +19,13 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
     return (
         <section className="">
-            <header className="px-4 py-3 text-2xl bg-blue-500 flex justify-between" style={{ boxShadow: '0px 2px 1px rgba(0,0,0, .2)' }}>
+            <header
+                className="px-4 py-3 text-2xl bg-blue-500 flex justify-between"
+                style={{
+                    boxShadow: '0px 2px 1px rgba(0,0,0, .2)',
+                    background: 'linear-gradient(to bottom right, #9d00ff, #001c80)',
+                }}
+            >
                 <div ref={logoRef} className="" style={{ transform: 'scale(1.5)' }}>
                     {logo}
                 </div>
@@ -33,12 +39,12 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 function App() {
     return (
         <div className="relative bg-blue-300" style={{
-            backgroundImage: `url(${noiseBkg})`,
-            backgroundColor: '#1f5188',
-            mixBlendMode: 'lighten'
+            backgroundImage: `url(${noiseBkg}), linear-gradient(to bottom right, rgb(8 137 252), rgb(10 26 39))`,
+            //backgroundColor: '#1f5188',
+            //mixBlendMode: 'lighten' //<- to make it work the parent should have background-color
         }}
         >
-        {/*
+            {/*
         <div className="relative bg-blue-300" style={{
             backgroundImage: `url(${noiseBkg})`,
             mixBlendMode: 'lighten'
