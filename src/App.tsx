@@ -8,13 +8,18 @@ import TestSectionRedux from './components/Show3Redux/TestSectionRedux';
 import TestSectionZustand from './components/Show4Zustand/TestSectionZustand';
 import TestSectionJotai from './components/Show5Jotai/TestSectionJotai';
 import noiseBkg from './assets/noise-gen.png';
+import { a, useSpring } from '@react-spring/web';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
-    const logoRef = React.useRef<HTMLDivElement>(null);
 
-    // useTimeout(() => {
-    //     logoRef.current && (logoRef.current.style.transform = 'scale(1)');
-    // }, Math.round((Math.random() + 2) * 1000));
+    const styles = useSpring({
+        from: { scale: .1, x: 400 },
+        to: { scale: 1, x: 0 },
+        config: {
+            duration: 1000,
+        },
+        delay: 2000,
+    })
 
     return (
         <section className="bg-blue-300 text-blue-200">
@@ -25,10 +30,9 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
                     background: 'linear-gradient(to right, rgb(65, 155, 255), rgb(0, 68, 141))',
                 }}
             >
-                <div ref={logoRef} className="" style={{ transform: 'scale(1)' }}>
-                {/* <div ref={logoRef} className="" style={{ transform: 'scale(1.5)' }}> */}
+                <a.div style={styles}>
                     {logo}
-                </div>
+                </a.div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
             </header>
             {children}
