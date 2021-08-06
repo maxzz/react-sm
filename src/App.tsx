@@ -38,54 +38,89 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
 function SideBar() {
     return (
-        <div
-            className="absolute left-0 top-0 h-full
-            py-[2vw] px-[1vw] hidden sm:flex justify-end 
-            font-sans uppercase font-black text-[#9ccbff] bg-blue-200"
-            style={{
-                writingMode: 'vertical-rl',
-                transform: 'rotate(180deg)',
-                textShadow: 'rgb(255 255 255 / 70%) 1px 1px 2px, rgb(59 130 246 / 52%) 0px 0px 0.1em, rgb(115 168 255 / 49%) 0px 0px 0.1em',
-                backgroundColor: '#98c9ff',
-                boxShadow: '5px -9px 2px 5px #779cc485',
-                fontSize: 'calc(24px + 6 * ((100vw - 320px) / 680))',
-            }}
-        >
-            <div className="">React State Management</div>
-            <div className="py-2" style={{ fontSize: 'calc(12px + 6 * ((100vw - 320px) / 680))' }}>2021</div>
+        <div className="fixed h-full w-full flex">
+            <div
+                className="
+                py-[2vw] px-[1vw]
+                hidden sm:flex justify-end
+                font-sans uppercase font-black text-[#9ccbff] bg-blue-200"
+                style={{
+                    writingMode: 'vertical-rl',
+                    transform: 'rotate(180deg)',
+                    textShadow: 'rgb(255 255 255 / 70%) 1px 1px 2px, rgb(59 130 246 / 52%) 0px 0px 0.1em, rgb(115 168 255 / 49%) 0px 0px 0.1em',
+                    backgroundColor: '#98c9ff',
+                    boxShadow: '5px -9px 2px 5px #779cc485',
+                    fontSize: 'calc(24px + 6 * ((100vw - 320px) / 680))',
+                }}
+            >
+                <div className="">React State Management</div>
+                <div className="py-2" style={{ fontSize: 'calc(12px + 6 * ((100vw - 320px) / 680))' }}>2021</div>
+            </div>
+            <div
+                className="flex-1"
+                style={{
+                    backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, red)`,
+                }}
+            ></div>
         </div>
     );
 }
 
+// function SideBar() {
+//     return (
+//         <div
+//             className="absolute left-0 top-0 h-full
+//             py-[2vw] px-[1vw] hidden sm:flex justify-end 
+//             font-sans uppercase font-black text-[#9ccbff] bg-blue-200"
+//             style={{
+//                 writingMode: 'vertical-rl',
+//                 transform: 'rotate(180deg)',
+//                 textShadow: 'rgb(255 255 255 / 70%) 1px 1px 2px, rgb(59 130 246 / 52%) 0px 0px 0.1em, rgb(115 168 255 / 49%) 0px 0px 0.1em',
+//                 backgroundColor: '#98c9ff',
+//                 boxShadow: '5px -9px 2px 5px #779cc485',
+//                 fontSize: 'calc(24px + 6 * ((100vw - 320px) / 680))',
+//             }}
+//         >
+//             <div className="">React State Management</div>
+//             <div className="py-2" style={{ fontSize: 'calc(12px + 6 * ((100vw - 320px) / 680))' }}>2021</div>
+//         </div>
+//     );
+// }
+
 function App() {
     return (
-        <div className="relative bg-blue-300 overflow-y-scroll" style={{
-            backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
-            //, linear-gradient(to right bottom, #2e08fc, #f18210)
-            //backgroundColor: '#1f5188',
-            //mixBlendMode: 'lighten' //<- to make it work the parent should have background-color
-        }}
-        >
-        {/* <div> */}
+        // overflow-y-scroll
+        <div className="">
             <SideBar />
-            <div className="h-screen max-w-lg mx-auto bg-transparent flex-col text-blue-200">
-                <XtraAppHeader />
-
-                <Section title="React" logo={<LogoReact />}>
-                    <TestSectionReact />
-                </Section>
-                <Section title="Context API" logo={<LogoContext />}>
-                    <TestSectionContext />
-                </Section>
-                <Section title="Redux Toolkit" logo={<LogoRedux />}>
-                    <TestSectionRedux />
-                </Section>
-                <Section title="Zustand" logo={<LogoZustand />}>
-                    <TestSectionZustand />
-                </Section>
-                <Section title="Jotai / Recoil" logo={<LogoJotai />}>
-                    <TestSectionJotai />
-                </Section>
+            <div
+                className="relative flex"
+                style={{
+                    //backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, red)`,
+                    // backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
+                    //, linear-gradient(to right bottom, #2e08fc, #f18210)
+                    //backgroundColor: '#1f5188',
+                    //mixBlendMode: 'lighten' //<- to make it work the parent should have background-color
+                }}
+            >
+                
+                <div className="max-w-lg mx-auto bg-transparent flex-col text-blue-200">
+                    <XtraAppHeader />
+                    <Section title="React" logo={<LogoReact />}>
+                        <TestSectionReact />
+                    </Section>
+                    <Section title="Context API" logo={<LogoContext />}>
+                        <TestSectionContext />
+                    </Section>
+                    <Section title="Redux Toolkit" logo={<LogoRedux />}>
+                        <TestSectionRedux />
+                    </Section>
+                    <Section title="Zustand" logo={<LogoZustand />}>
+                        <TestSectionZustand />
+                    </Section>
+                    <Section title="Jotai / Recoil" logo={<LogoJotai />}>
+                        <TestSectionJotai />
+                    </Section>
+                </div>
             </div>
         </div>
     );
