@@ -16,10 +16,15 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
         from: { scale: .1, x: 400 },
         to: { scale: 1, x: 0 },
         config: {
-            duration: 1000,
+            tension: 180,
+            friction: 12
         },
-        delay: 2000,
-    })
+        // config: {
+        //     //duration: 1000,
+        //     tension: 300,
+        // },
+        delay: Math.floor((Math.random() + 1) * 1000),
+    });
 
     return (
         <section className="bg-blue-300 text-blue-200">
