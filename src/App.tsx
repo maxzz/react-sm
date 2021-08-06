@@ -18,7 +18,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
     }, Math.round((Math.random() + 2) * 1000));
 
     return (
-        <section className="">
+        <section className="bg-blue-300">
             <header
                 className="px-4 py-3 text-2xl bg-blue-500 flex justify-between"
                 style={{
@@ -59,7 +59,7 @@ function SideBar() {
 
 function App() {
     return (
-        <div className="relative bg-blue-300" style={{
+        <div className="relative bg-blue-300 overflow-y-scroll" style={{
             backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
             //, linear-gradient(to right bottom, #2e08fc, #f18210)
             //backgroundColor: '#1f5188',
@@ -68,7 +68,7 @@ function App() {
         >
         {/* <div> */}
             <SideBar />
-            <div className="h-screen max-w-lg mx-auto bg-blue-50 flex-col text-blue-200">
+            <div className="h-screen max-w-lg mx-auto bg-transparent flex-col text-blue-200">
                 <XtraAppHeader />
 
                 <Section title="React" logo={<LogoReact />}>
