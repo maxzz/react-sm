@@ -36,7 +36,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
     );
 }
 
-function SideBar() {
+function Background() {
     return (
         <div className="fixed h-full w-full flex bg-[#808080]">
             <div
@@ -91,9 +91,9 @@ function SideBar() {
 
 function App() {
     return (
-        <div className="">
-            <SideBar />
-            <div className="relative flex pl-16">
+        <>
+            <Background />
+            <div className="relative flex sm:pl-16 pl-0">
                 <div className="max-w-lg mx-auto bg-transparent flex-col text-blue-200">
                     <XtraAppHeader />
                     <Section title="React" logo={<LogoReact />}>
@@ -113,7 +113,7 @@ function App() {
                     </Section>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
