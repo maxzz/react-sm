@@ -18,7 +18,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
     }, Math.round((Math.random() + 2) * 1000));
 
     return (
-        <section className="bg-blue-300">
+        <section className="bg-blue-300 text-blue-200">
             <header
                 className="px-4 py-3 text-2xl bg-blue-500 flex justify-between"
                 style={{
@@ -73,7 +73,7 @@ function App() {
         <>
             <Background />
             <div className="relative flex sm:pl-16 pl-0">
-                <div className="max-w-lg mx-auto bg-transparent flex-col text-blue-200">
+                <div className="max-w-lg mx-auto bg-transparent space-y-1">
                     <XtraAppHeader />
                     <Section title="React" logo={<LogoReact />}>
                         <TestSectionReact />
