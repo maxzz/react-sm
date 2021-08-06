@@ -91,20 +91,9 @@ function SideBar() {
 
 function App() {
     return (
-        // overflow-y-scroll
         <div className="">
             <SideBar />
-            <div
-                className="relative flex pl-16"
-                style={{
-                    //backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, red)`,
-                    // backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
-                    //, linear-gradient(to right bottom, #2e08fc, #f18210)
-                    //backgroundColor: '#1f5188',
-                    //mixBlendMode: 'lighten' //<- to make it work the parent should have background-color
-                }}
-            >
-                
+            <div className="relative flex pl-16">
                 <div className="max-w-lg mx-auto bg-transparent flex-col text-blue-200">
                     <XtraAppHeader />
                     <Section title="React" logo={<LogoReact />}>
