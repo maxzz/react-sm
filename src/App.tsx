@@ -38,7 +38,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
 
 function SideBar() {
     return (
-        <div className="fixed h-full w-full flex">
+        <div className="fixed h-full w-full flex bg-[#808080]">
             <div
                 className="
                 py-[2vw] px-[1vw]
@@ -59,7 +59,9 @@ function SideBar() {
             <div
                 className="flex-1"
                 style={{
-                    backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, red)`,
+                    backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #ff6a00)`,
+                    mixBlendMode: 'hard-light',
+                    opacity: 1,
                 }}
             ></div>
         </div>
@@ -93,7 +95,7 @@ function App() {
         <div className="">
             <SideBar />
             <div
-                className="relative flex"
+                className="relative flex pl-16"
                 style={{
                     //backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, red)`,
                     // backgroundImage: `url(${noiseBkg}), linear-gradient(to right bottom, #0889fc, #0a1a27)`,
