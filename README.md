@@ -8,7 +8,7 @@ React state managment flavours.
 3. Zustand
 4. Jotai
 
-<img src="src/assets/previews/2021-07-09_0-45-11.png" width="340px" />
+<img src="src/assets/previews/2021-08-05_18-18-46.png" width="340px" />
 
 #### Links
 
