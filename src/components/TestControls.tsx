@@ -22,7 +22,7 @@ function TestControls(props: TestControlsProps) {
         <div className="w-32 h-32 text-blue-500 border-4 rounded-md border-blue-100 bg-gray-50">
             {body}
         </div>
-        <div className="flex flex-col justify-between text-sm">
+        <div className="flex flex-col justify-between">
             {/* Controls */}
             <div className="text-blue-900">
                 <div className="flex items-center">

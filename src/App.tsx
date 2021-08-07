@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import './App.scss';
-import './components/ui/slider.scss';
+//import './components/ui/slider.scss';
 import { LogoReact, LogoContext, LogoRedux, LogoZustand, LogoJotai } from './components/XtraLogos';
 import XtraAppHeader from './components/XtraAppHeader';
 import TestSectionReact from './components/Show1React/TestSectionReact';
