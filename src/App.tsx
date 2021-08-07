@@ -13,50 +13,15 @@ import { a, useSpring } from '@react-spring/web';
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
 
     const styles = useSpring({
-        from: {
-            x: 400,
-            scale: .1,
-        },
+        from: { x: 400, scale: .1, },
         to: async animate => {
             await animate({
                 to: { x: 0 },
-                config: {
-                    duration: Math.floor((Math.random() + 2) * 1000),
-                },
-                //delay: Math.floor((Math.random() + 1) * 1000),
+                config: { duration: Math.floor((Math.random() + 2) * 1000), },
             });
             await animate({ scale: 1, config: { tension: 1500 } });
         }
     });
-
-    console.log('st', styles);
-
-    // const ref = React.useRef(null);
-    // const [styles, animate] = useSpring(() => ({
-    //     x: 400,
-    //     ref,
-    // }));
-
-    // React.useEffect(() => {
-    //     async function start() {
-    //         //await ref.current?.start({ x: 100 });
-    //     }
-    //     start();
-    // }, []);
-
-    // console.log('st', styles);
-
-    // const styles = useSpring({
-    //     from: { scale: .1, x: 400 },
-    //     to: { scale: 1, x: 0 },
-    //     config: {
-    //         tension: 180,
-    //         friction: 12
-    //     },
-    //     delay: Math.floor((Math.random() + 1) * 1000),
-    // });
-
-    // console.log('st', styles);
 
     return (
         <section className="bg-blue-300 text-blue-200">
@@ -68,7 +33,6 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
                 }}
             >
                 <a.div style={styles}>
-                    {/* <a.div style={styles} ref={ref}> */}
                     {logo}
                 </a.div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
