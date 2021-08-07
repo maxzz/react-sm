@@ -12,20 +12,33 @@ import { a, useSpring } from '@react-spring/web';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
 
-    const ref = React.useRef(null);
-    const [styles, animate] = useSpring(() => ({
-        x: 400,
-        ref,
-    }));
-
-    React.useEffect(() => {
-        async function start() {
-            //await ref.current?.start({ x: 100 });
+    const styles = useSpring({
+        from: {
+            x: 400,
+            scale: .1,
+        },
+        to: async animate => {
+            await animate({ x: 0 });
+            await animate({ scale: 1 });
         }
-        start();
-    }, []);
+    });
 
     console.log('st', styles);
+
+    // const ref = React.useRef(null);
+    // const [styles, animate] = useSpring(() => ({
+    //     x: 400,
+    //     ref,
+    // }));
+
+    // React.useEffect(() => {
+    //     async function start() {
+    //         //await ref.current?.start({ x: 100 });
+    //     }
+    //     start();
+    // }, []);
+
+    // console.log('st', styles);
 
     // const styles = useSpring({
     //     from: { scale: .1, x: 400 },
@@ -48,7 +61,8 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
                     background: 'linear-gradient(to right, rgb(65, 155, 255), rgb(0, 68, 141))',
                 }}
             >
-                <a.div style={styles} ref={ref}>
+                <a.div style={styles}>
+                    {/* <a.div style={styles} ref={ref}> */}
                     {logo}
                 </a.div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
