@@ -18,8 +18,14 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
             scale: .1,
         },
         to: async animate => {
-            await animate({ x: 0 });
-            await animate({ scale: 1 });
+            await animate({
+                to: { x: 0 },
+                config: {
+                    duration: Math.floor((Math.random() + 2) * 1000),
+                },
+                //delay: Math.floor((Math.random() + 1) * 1000),
+            });
+            await animate({ scale: 1, config: { tension: 1500 } });
         }
     });
 
