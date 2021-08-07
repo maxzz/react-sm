@@ -12,19 +12,32 @@ import { a, useSpring } from '@react-spring/web';
 
 function Section({ logo, title, children }: { logo: ReactNode, title: string; children: ReactNode; }) {
 
-    const styles = useSpring({
-        from: { scale: .1, x: 400 },
-        to: { scale: 1, x: 0 },
-        config: {
-            tension: 180,
-            friction: 12
-        },
-        // config: {
-        //     //duration: 1000,
-        //     tension: 300,
-        // },
-        delay: Math.floor((Math.random() + 1) * 1000),
-    });
+    const ref = React.useRef(null);
+    const [styles, animate] = useSpring(() => ({
+        x: 400,
+        ref,
+    }));
+
+    React.useEffect(() => {
+        async function start() {
+            //await ref.current?.start({ x: 100 });
+        }
+        start();
+    }, []);
+
+    console.log('st', styles);
+
+    // const styles = useSpring({
+    //     from: { scale: .1, x: 400 },
+    //     to: { scale: 1, x: 0 },
+    //     config: {
+    //         tension: 180,
+    //         friction: 12
+    //     },
+    //     delay: Math.floor((Math.random() + 1) * 1000),
+    // });
+
+    // console.log('st', styles);
 
     return (
         <section className="bg-blue-300 text-blue-200">
@@ -35,7 +48,7 @@ function Section({ logo, title, children }: { logo: ReactNode, title: string; ch
                     background: 'linear-gradient(to right, rgb(65, 155, 255), rgb(0, 68, 141))',
                 }}
             >
-                <a.div style={styles}>
+                <a.div style={styles} ref={ref}>
                     {logo}
                 </a.div>
                 <div className="" style={{ textShadow: '#00000021 3px 2px' }}>{title}</div>
