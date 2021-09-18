@@ -16,3 +16,4 @@ React state managment flavours.
 * [Redux documentation](https://redux.js.org/introduction/core-concepts)
 * [Zustand documentation](https://docs.pmnd.rs/zustand)
 * [Jotai documentation](https://docs.pmnd.rs/jotai)
+* [Different State Management options](https://t.me/technologytm/15377)
